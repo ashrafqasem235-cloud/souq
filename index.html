@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سوق شهيد - بيع واشتري أي شي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>سوق شهيد<small>بيع واشتري أي شي</small></h1><button type="button" id="hb" data-a="primary">+ أضف إعلان</button></header>
+<div class="tabs"><button type="button" class="tab on" id="t-ads" data-a="tab" data-id="ads">الإعلانات</button><button type="button" class="tab" id="t-shops" data-a="tab" data-id="shops">المحلات</button></div>
+<div class="status" id="st" hidden></div>
+<div class="wrap" id="v-ads"><input id="q" type="search" placeholder="دوّر على موبايل، كنبة، غسالة..."><div class="cats" id="cats"></div><p class="count" id="cnt"></p><div class="grid" id="grid"></div></div>
+<div class="wrap" id="v-shops" hidden><div class="intro">عندك محل؟ اضغط <b>سجّل محلك</b> وانعرض لكل زوار الموقع باسمك واختصاصك وموقعك ورقمك.</div><input id="sq" type="search" placeholder="دوّر على محل أو اختصاص..."><p class="count" id="scnt"></p><div id="slist"></div></div>
+<dialog id="addDlg"><div class="dhead"><h2>أضف إعلانك</h2><button type="button" class="x" data-a="close">×</button></div><div class="dbody">
+<div class="f"><label for="f-title">وش تبيع؟</label><input id="f-title" maxlength="120" placeholder="مثال: ثلاجة سامسونج نظيفة"></div>
+<div class="f"><label for="f-cat">التصنيف</label><select id="f-cat"></select></div>
+<div class="f two"><div><label for="f-price">السعر</label><input id="f-price" type="number" inputmode="decimal" min="0" step="any"></div><div><label for="f-cur">العملة</label><input id="f-cur" maxlength="10" placeholder="$ أو د.ع"></div></div>
+<div class="f"><label for="f-desc">وصف (اختياري)</label><textarea id="f-desc" maxlength="1000"></textarea></div>
+<div class="f"><label for="f-area">المنطقة (اختياري)</label><input id="f-area" maxlength="80"></div>
+<div class="f"><label for="f-name">اسمك (اختياري)</label><input id="f-name" maxlength="60"></div>
+<div class="f"><label for="f-phone">رقم واتساب مع رمز الدولة</label><input id="f-phone" type="tel" inputmode="numeric" placeholder="مثال: 9647xxxxxxxxx"><p class="note">هذا الرقم يشوفه كل زوار الموقع.</p></div>
+<div class="f"><label for="f-img">صورة (اختياري)</label><input id="f-img" type="file" accept="image/*"></div>
+<p class="err" id="addErr"></p><button type="button" id="addBtn" data-a="add" style="width:100%">انشر الإعلان</button></div></dialog>
+<dialog id="shopDlg"><div class="dhead"><h2>سجّل محلك</h2><button type="button" class="x" data-a="close">×</button></div><div class="dbody">
+<div class="f"><label for="s-name">اسم المحل</label><input id="s-name" maxlength="100"></div>
+<div class="f"><label for="s-spec">شنو اختصاص المحل؟</label><input id="s-spec" maxlength="120" placeholder="مثال: مواد غذائية، صيانة موبايلات"></div>
+<div class="f"><label for="s-area">المنطقة أو الحي</label><input id="s-area" maxlength="80"></div>
+<div class="f"><label for="s-addr">أقرب نقطة دالة (اختياري)</label><input id="s-addr" maxlength="150"></div>
+<div class="f"><label for="s-map">رابط الموقع من خرائط قوقل (اختياري)</label><input id="s-map" type="url" maxlength="500" placeholder="https://maps.google.com/..."></div>
+<div class="f"><label for="s-hours">وقت الدوام (اختياري)</label><input id="s-hours" maxlength="100"></div>
+<div class="f"><label for="s-phone">رقم الهاتف مع رمز الدولة</label><input id="s-phone" type="tel" inputmode="numeric" placeholder="مثال: 9647xxxxxxxxx"><p class="note">هذا الرقم يشوفه كل زوار الموقع.</p></div>
+<p class="err" id="shopErr"></p><button type="button" id="shopBtn" data-a="addshop" style="width:100%">سجّل المحل</button></div></dialog>
+<dialog id="vd"><div class="dhead"><h2 id="vt"></h2><button type="button" class="x" data-a="close">×</button></div><div class="dbody" id="vb"></div></dialog>
+<script src="app.js"></script>
+</body>
+  </html>
